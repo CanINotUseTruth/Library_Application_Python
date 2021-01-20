@@ -45,6 +45,9 @@ else:
         for book in library_load:
             library.append(book)
 
+
+# Too many breaks in loop
+
 def start():
         
     # Log in to the library
@@ -85,17 +88,12 @@ def start():
                         print("\nHi " + username + "! Welcome to your library.")
                         return
                     elif username == user['username'] and password != user['password']:
-                        print("\nIncorrect password.")
+                        print("\nIncorrect username or password. Is this account registered?")
                         print("\nReturning to menu...")
                         break
-                    else:
-                        print("\nYou are not a known user, try registering!")
-                        print("\nReturning to menu...")
-                        break
-
-
 
             elif  log_input == '3':
+                print("\nNothing was saved from this session.")
                 print("\nClosing the program...")
                 exit()
             
@@ -252,4 +250,3 @@ except FileNotFoundError:
     print("Could not save books in library file!")
 else:
     print("Saved all this sessions books to library file.")
-
